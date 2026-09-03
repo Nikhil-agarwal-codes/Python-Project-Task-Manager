@@ -27,4 +27,27 @@ The goal was to learn the basics of GUI development, event-driven logic, and han
 
 Make sure Python 3.x is installed on your system. Tkinter usually comes bundled with Python, so no extra installation is required.
 
+### 2. Running the Program
+
+1. Download or copy the project file (`b.py`).
+2. Open a terminal or command prompt in the folder where the file is located.
+3. Run the following command:
+
+   ```bash
+   python b.py
+   ```
+
+The Task Manager window should appear on your screen immediately.
+
+## How to Test the Application
+
+Here's a quick way to verify everything works as expected:
+
+### 1. Adding a Task
+
+- Type something in the "Enter Task" box
+- Click **Add Task**
+- The task should appear instantly in the list
+
+
 
