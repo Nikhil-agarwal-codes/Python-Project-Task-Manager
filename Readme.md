@@ -49,5 +49,41 @@ Here's a quick way to verify everything works as expected:
 - Click **Add Task**
 - The task should appear instantly in the list
 
+### 2. Searching for a Task
+
+- Use the search box to filter items
+- The list updates automatically as you type
+- Clear the search bar to see all tasks again
+
+### 3. Updating a Task
+
+- Select a task from the list
+- Enter the new version of the task in the input box
+- Click **Update Task** and check if it changes correctly
+
+### 4. Deleting a Task
+
+- Select any task
+- Hit **Delete Task**
+- Verify that it disappears from the list
+
+### 5. Error Handling
+
+Try some invalid actions like:
+
+- Pressing Update without selecting a task
+- Adding an empty task
+- Deleting without selecting a task
+
+You should see proper warning dialogs.
+
+### 6. Screenshots
+
+> Add screenshots of the application here, e.g.:
+>
+> ```markdown
+> ![Task Manager Screenshot](screenshots/screenshot1.png)
+> ```
+
 
 
