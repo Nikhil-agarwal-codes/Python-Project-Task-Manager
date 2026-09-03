@@ -77,13 +77,8 @@ Try some invalid actions like:
 
 You should see proper warning dialogs.
 
-### 6. Screenshots
 
-> Add screenshots of the application here, e.g.:
->
-> ```markdown
-> ![Task Manager Screenshot](screenshots/screenshot1.png)
-> ```
+
 
 
 
