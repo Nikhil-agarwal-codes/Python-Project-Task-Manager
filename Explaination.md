@@ -209,3 +209,13 @@ def update_task(self):
     self.task_entry.delete(0, tk.END)
     self.refresh_listbox(self.all_tasks)
 ```
+This one is a bit more involved because of the search feature:
+ 
+1. `self.listbox.curselection()` gets the index of whichever row is currently **highlighted/selected** in the listbox. If nothing is selected, it shows an error and stops.
+2. It reads the replacement text from the task entry box; if blank, warns and stops.
+3. **The key trick:** because the listbox might currently be showing a *filtered* (searched) subset of tasks, the selected index doesn't necessarily match the index in `self.all_tasks`. So the code:
+   - Grabs all currently *visible* items (`self.listbox.get(0, tk.END)`).
+   - Finds the actual task text at the selected row (`old`).
+   - Looks up where that exact text lives in the real, full list (`self.all_tasks.index(old)`).
+   - Replaces it there with the new text.
+4. Clears the input box and refreshes the display.
