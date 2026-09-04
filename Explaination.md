@@ -135,4 +135,14 @@ self.listbox.config(yscrollcommand=scroll.set)
   - `command=self.listbox.yview` — dragging the scrollbar moves the listbox view.
   - `self.listbox.config(yscrollcommand=scroll.set)` — scrolling the listbox (e.g., with a mouse wheel) updates the scrollbar's position.
 ---
+
+ ## 4. Application Logic (Methods)
  
+### 4.1 `refresh_listbox(self, data)`
+ 
+```python
+def refresh_listbox(self, data):
+    self.listbox.delete(0, tk.END)
+    for entry in data:
+        self.listbox.insert(tk.END, entry)
+```
