@@ -71,3 +71,68 @@ tk.Label(root, text="Task Manager", font=("Arial", 20, "bold"), bg=background, f
 ```
  
 A large bold title at the top of the window. `pady=10` adds 10 pixels of vertical spacing around it.
+
+### 3.2 Search Bar
+ 
+```python
+tk.Label(root, text="Search Task:", ...).pack()
+ 
+self.search_entry = tk.Entry(root, width=30, font=("Arial", 12), bg=entry_color, fg=text_color, insertbackground=text_color)
+self.search_entry.pack(pady=4)
+self.search_entry.bind("<KeyRelease>", self.filter_tasks)
+```
+ 
+- A label plus a text input (`Entry`) where the user types a search term.
+- `insertbackground` controls the color of the blinking text cursor (so it's visible on a dark background).
+- `.bind("<KeyRelease>", self.filter_tasks)` is important: every time a key is released while typing in this box, tkinter automatically calls `self.filter_tasks`. This is what makes the search feel "live" (filtering as you type), instead of needing a separate "Search" button.
+### 3.3 Task Input Field
+ 
+```python
+tk.Label(root, text="Enter Task:", ...).pack()
+ 
+self.task_entry = tk.Entry(root, width=30, font=("Arial", 12), bg=entry_color, fg=text_color, insertbackground=text_color)
+self.task_entry.pack(pady=5)
+```
+ 
+This is a **separate** text box from the search box. It's used both to type a *new* task and to type a *replacement* value when updating an existing task.
+ 
+### 3.4 Buttons Row
+ 
+```python
+btn_container = tk.Frame(root, bg=background)
+btn_container.pack(pady=10)
+```
+ 
+A `Frame` is an invisible container used to group the three buttons side-by-side horizontally (using `.grid()` inside it), rather than stacked vertically like the rest of the window.
+ 
+```python
+tk.Button(btn_container, text="Add Task", ..., command=self.add_task).grid(row=0, column=0, padx=5)
+tk.Button(btn_container, text="Update Task", ..., command=self.update_task).grid(row=0, column=1, padx=5)
+tk.Button(btn_container, text="Delete Task", ..., command=self.delete_task).grid(row=0, column=2, padx=5)
+```
+ 
+- Three buttons placed in one row (row 0) at columns 0, 1, and 2.
+- `command=self.add_task` (etc.) tells tkinter which method to run when that button is clicked.
+- Colors (`green_btn`, `blue_btn`, `red_btn`) visually hint at each action's nature: green = create, blue = edit, red = destructive.
+### 3.5 Listbox with Scrollbar
+ 
+```python
+list_frame = tk.Frame(root, bg=background)
+list_frame.pack(pady=10)
+ 
+self.listbox = tk.Listbox(list_frame, width=50, height=15, font=("Arial", 11), bg=list_color, fg=text_color, selectbackground="#444")
+self.listbox.pack(side=tk.LEFT)
+ 
+scroll = tk.Scrollbar(list_frame, command=self.listbox.yview)
+scroll.pack(side=tk.RIGHT, fill=tk.Y)
+ 
+self.listbox.config(yscrollcommand=scroll.set)
+```
+ 
+- Another `Frame` groups the listbox and its scrollbar together side by side.
+- `self.listbox` is where all tasks are visually displayed, one per line.
+- The `Scrollbar` is linked to the listbox in **both directions**:
+  - `command=self.listbox.yview` — dragging the scrollbar moves the listbox view.
+  - `self.listbox.config(yscrollcommand=scroll.set)` — scrolling the listbox (e.g., with a mouse wheel) updates the scrollbar's position.
+---
+ 
