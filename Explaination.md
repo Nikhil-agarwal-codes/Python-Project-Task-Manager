@@ -146,3 +146,4 @@ def refresh_listbox(self, data):
     for entry in data:
         self.listbox.insert(tk.END, entry)
 ```
+A small reusable helper: it clears everything currently shown in the listbox (`delete(0, tk.END)`) and re-inserts every item from whatever list (`data`) is passed in. This is called any time the visible list needs to be redrawn — after adding, updating, deleting, or searching.
