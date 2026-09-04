@@ -219,3 +219,20 @@ This one is a bit more involved because of the search feature:
    - Looks up where that exact text lives in the real, full list (`self.all_tasks.index(old)`).
    - Replaces it there with the new text.
 4. Clears the input box and refreshes the display.
+   
+### 4.5 `delete_task(self)`
+ 
+```python
+def delete_task(self):
+    selected = self.listbox.curselection()
+ 
+    if not selected:
+        messagebox.showerror("No Selection", "Select a task to delete.")
+        return
+ 
+    visible_items = self.listbox.get(0, tk.END)
+    item = visible_items[selected[0]]
+ 
+    self.all_tasks.remove(item)
+    self.refresh_listbox(self.all_tasks)
+```
