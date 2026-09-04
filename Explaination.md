@@ -184,3 +184,28 @@ def add_task(self):
 - Reads whatever is typed in the task input box.
 - If it's blank, shows a warning popup and stops (doesn't add an empty task).
 - Otherwise, appends the new task to `self.all_tasks`, clears the input box, and refreshes the listbox so the new task appears immediately.
+### 4.4 `update_task(self)`
+ 
+```python
+def update_task(self):
+    selected = self.listbox.curselection()
+ 
+    if not selected:
+        messagebox.showerror("No Selection", "Select a task to update.")
+        return
+ 
+    updated_text = self.task_entry.get().strip()
+ 
+    if updated_text == "":
+        messagebox.showwarning("Empty Field", "Enter an updated value.")
+        return
+ 
+    visible_items = self.listbox.get(0, tk.END)
+    old = visible_items[selected[0]]
+ 
+    original_index = self.all_tasks.index(old)
+    self.all_tasks[original_index] = updated_text
+ 
+    self.task_entry.delete(0, tk.END)
+    self.refresh_listbox(self.all_tasks)
+```
