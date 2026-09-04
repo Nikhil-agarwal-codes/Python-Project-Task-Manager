@@ -248,3 +248,7 @@ root = tk.Tk()
 app = TaskManagerGUI(root)
 root.mainloop()
 ```
+- `tk.Tk()` creates the actual main application window object.
+- `TaskManagerGUI(root)` builds the whole interface described above inside that window.
+- `root.mainloop()` starts tkinter's **event loop** — this is what keeps the window open and responsive, continuously listening for user actions (clicks, key presses) until the window is closed. Without this line, the window would flash and close immediately.
+---
