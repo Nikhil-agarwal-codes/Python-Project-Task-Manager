@@ -265,3 +265,8 @@ root.mainloop()
 ### A Notable Design Detail
  
 Because searching only changes what's *displayed* (not the underlying `all_tasks` list), both `update_task` and `delete_task` have to carefully translate a listbox row index back into the correct item in the full task list, by matching on the task's **text** rather than its position. This avoids bugs like accidentally updating or deleting the wrong task while a search filter is active.
+
+### Known Limitation
+ 
+If two tasks have the **exact same text**, `self.all_tasks.index(old)` and `self.all_tasks.remove(item)` will always act on the *first* matching occurrence — this could cause an update/delete to affect the wrong duplicate. This is a minor edge case worth knowing about if you plan to extend the app.
+ 
