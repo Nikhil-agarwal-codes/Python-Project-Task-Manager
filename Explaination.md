@@ -27,7 +27,26 @@ def __init__(self, root):
     self.root.title("Task Manager")
     self.root.geometry("430x560")
 ```
+
+```python
+self.all_tasks = []
+```
  
+- This list is the app's **data store** — every task the user adds lives here in memory. Nothing is saved to a file or database, so tasks disappear when the app closes.
+### 2.2 Color Palette
+ 
+```python
+background = "#1e1e1e"
+text_color = "#ffffff"
+entry_color = "#2c2c2c"
+list_color = "#262626"
+ 
+green_btn = "#4CAF50"
+blue_btn = "#2196F3"
+red_btn = "#f44336"
+```
+ 
+These are just hex color codes stored in local variables so the dark theme is defined once and reused consistently across all widgets (background near-black, white text, colored buttons for different actions). 
 - `root` is the main tkinter window, passed in from outside the class.
 - `self.root` stores a reference to it so other methods in the class can use it later.
 - `.title()` sets the window's title bar text.
