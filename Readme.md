@@ -1,4 +1,12 @@
 # Task Manager (Python Tkinter Desktop App)
+ 
+A lightweight desktop Task Manager built with Python and Tkinter, featuring a clean dark-themed interface, live search filtering, and full task management — add, update, and delete — all with zero external dependencies.
+ 
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=white)
+![Tkinter](https://img.shields.io/badge/GUI-Tkinter-informational)
+![License](https://img.shields.io/badge/License-MIT-green)
+ 
+---
 
 ## Overview
 
