@@ -252,3 +252,12 @@ root.mainloop()
 - `TaskManagerGUI(root)` builds the whole interface described above inside that window.
 - `root.mainloop()` starts tkinter's **event loop** — this is what keeps the window open and responsive, continuously listening for user actions (clicks, key presses) until the window is closed. Without this line, the window would flash and close immediately.
 ---
+## 6. Summary of How It All Connects
+ 
+| User Action | Method Called | What Happens |
+|---|---|---|
+| Types in search box | `filter_tasks` | Listbox shows only matching tasks (data unchanged) |
+| Clicks "Add Task" | `add_task` | New task appended to `all_tasks`, listbox refreshed |
+| Selects a task, clicks "Update Task" | `update_task` | Selected task's text replaced in `all_tasks` |
+| Selects a task, clicks "Delete Task" | `delete_task` | Selected task removed from `all_tasks` |
+| Any of the above | `refresh_listbox` | Redraws the listbox to match current data |
