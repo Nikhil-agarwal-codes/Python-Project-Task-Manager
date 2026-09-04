@@ -59,3 +59,15 @@ self.root.config(bg=background)
 Applies the dark background color to the main window itself.
  
 ---
+ 
+## 3. Building the Interface (Widgets)
+ 
+Widgets are created and immediately "packed" onto the window using `.pack()`, which stacks them vertically by default.
+ 
+### 3.1 Header Label
+ 
+```python
+tk.Label(root, text="Task Manager", font=("Arial", 20, "bold"), bg=background, fg=text_color).pack(pady=10)
+```
+ 
+A large bold title at the top of the window. `pady=10` adds 10 pixels of vertical spacing around it.
