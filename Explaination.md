@@ -241,3 +241,10 @@ Follows the same pattern as `update_task`:
 2. Uses the same "map visible selection back to the real list" trick — gets the visible text at the selected index, then removes that exact value from `self.all_tasks` using `.remove()`.
 3. Refreshes the listbox.
 ---
+## 5. Starting the App
+ 
+```python
+root = tk.Tk()
+app = TaskManagerGUI(root)
+root.mainloop()
+```
