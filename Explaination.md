@@ -161,3 +161,9 @@ def filter_tasks(self, event=None):
     filtered = [t for t in self.all_tasks if word in t.lower()]
     self.refresh_listbox(filtered)
 ```
+- Triggered automatically on every keystroke in the search box (via the `<KeyRelease>` binding set up earlier).
+- `event=None` exists because tkinter automatically passes an "event" object when calling this via a key binding — but the parameter isn't actually used inside the function.
+- Gets the search text, lowercases and trims it.
+- If the search box is empty, show **all** tasks.
+- Otherwise, build a filtered list of tasks that contain the search word (case-insensitive) and display only those.
+- Note: this filtering only changes what's **displayed** — `self.all_tasks` (the real data) is never modified by searching.
