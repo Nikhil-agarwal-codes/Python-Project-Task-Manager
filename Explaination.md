@@ -147,3 +147,17 @@ def refresh_listbox(self, data):
         self.listbox.insert(tk.END, entry)
 ```
 A small reusable helper: it clears everything currently shown in the listbox (`delete(0, tk.END)`) and re-inserts every item from whatever list (`data`) is passed in. This is called any time the visible list needs to be redrawn — after adding, updating, deleting, or searching.
+
+### 4.2 `filter_tasks(self, event=None)` — Live Search
+ 
+```python
+def filter_tasks(self, event=None):
+    word = self.search_entry.get().lower().strip()
+ 
+    if not word:
+        self.refresh_listbox(self.all_tasks)
+        return
+ 
+    filtered = [t for t in self.all_tasks if word in t.lower()]
+    self.refresh_listbox(filtered)
+```
