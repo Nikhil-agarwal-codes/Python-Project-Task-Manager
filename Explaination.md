@@ -236,3 +236,8 @@ def delete_task(self):
     self.all_tasks.remove(item)
     self.refresh_listbox(self.all_tasks)
 ```
+Follows the same pattern as `update_task`:
+1. Checks that a task is selected.
+2. Uses the same "map visible selection back to the real list" trick — gets the visible text at the selected index, then removes that exact value from `self.all_tasks` using `.remove()`.
+3. Refreshes the listbox.
+---
