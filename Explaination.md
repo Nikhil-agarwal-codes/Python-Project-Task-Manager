@@ -261,3 +261,7 @@ root.mainloop()
 | Selects a task, clicks "Update Task" | `update_task` | Selected task's text replaced in `all_tasks` |
 | Selects a task, clicks "Delete Task" | `delete_task` | Selected task removed from `all_tasks` |
 | Any of the above | `refresh_listbox` | Redraws the listbox to match current data |
+
+### A Notable Design Detail
+ 
+Because searching only changes what's *displayed* (not the underlying `all_tasks` list), both `update_task` and `delete_task` have to carefully translate a listbox row index back into the correct item in the full task list, by matching on the task's **text** rather than its position. This avoids bugs like accidentally updating or deleting the wrong task while a search filter is active.
