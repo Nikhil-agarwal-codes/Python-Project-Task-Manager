@@ -167,3 +167,17 @@ def filter_tasks(self, event=None):
 - If the search box is empty, show **all** tasks.
 - Otherwise, build a filtered list of tasks that contain the search word (case-insensitive) and display only those.
 - Note: this filtering only changes what's **displayed** — `self.all_tasks` (the real data) is never modified by searching.
+### 4.3 `add_task(self)`
+ 
+```python
+def add_task(self):
+    new_task = self.task_entry.get().strip()
+ 
+    if new_task == "":
+        messagebox.showwarning("Empty Input", "Please enter a task.")
+        return
+ 
+    self.all_tasks.append(new_task)
+    self.task_entry.delete(0, tk.END)
+    self.refresh_listbox(self.all_tasks)
+```
