@@ -52,3 +52,10 @@ These are just hex color codes stored in local variables so the dark theme is de
 - `.title()` sets the window's title bar text.
 - `.geometry("430x560")` fixes the window size to 430 pixels wide by 560 pixels tall.
 
+```python
+self.root.config(bg=background)
+```
+ 
+Applies the dark background color to the main window itself.
+ 
+---
