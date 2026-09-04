@@ -181,3 +181,6 @@ def add_task(self):
     self.task_entry.delete(0, tk.END)
     self.refresh_listbox(self.all_tasks)
 ```
+- Reads whatever is typed in the task input box.
+- If it's blank, shows a warning popup and stops (doesn't add an empty task).
+- Otherwise, appends the new task to `self.all_tasks`, clears the input box, and refreshes the listbox so the new task appears immediately.
