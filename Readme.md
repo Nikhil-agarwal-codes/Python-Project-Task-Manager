@@ -77,3 +77,19 @@ No `pip install` required — the app runs out of the box.
 - Update and delete operations map the currently selected row back to the correct item in the full task list, ensuring accuracy even when a search filter is active.
 
 ---
+
+## ⚠️ Known Limitations
+
+- **No persistence** — Tasks are lost when the app is closed, since there is no file or database storage.
+- **Duplicate task names** — If two tasks share identical text, update/delete operations will act on the first matching entry.
+
+---
+
+## 🗺️ Possible Future Improvements
+
+- Save/load tasks from a file (e.g., JSON or SQLite) for persistence across sessions
+- Add due dates, priorities, or task categories
+- Support marking tasks as complete
+- Keyboard shortcuts for common actions
+
+---
