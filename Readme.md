@@ -60,3 +60,12 @@ The app demonstrates core GUI development concepts such as event-driven programm
 No `pip install` required — the app runs out of the box.
 
 ---
+
+## 🧭 How to Use
+
+1. **Add a task** — Type a task into the "Enter Task" field and click **Add Task**.
+2. **Search tasks** — Start typing in the "Search Task" field to filter the list live.
+3. **Update a task** — Select a task from the list, type the new text into the "Enter Task" field, and click **Update Task**.
+4. **Delete a task** — Select a task from the list and click **Delete Task**.
+
+---
