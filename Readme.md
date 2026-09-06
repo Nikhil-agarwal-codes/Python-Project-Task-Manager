@@ -7,6 +7,7 @@ A lightweight desktop Task Manager built with Python and Tkinter, featuring a cl
 ![License](https://img.shields.io/badge/License-MIT-green)
  
 ---
+
 ## 📋 Overview
 
 Task Manager GUI is a simple, no-frills desktop application for tracking day-to-day tasks. It's built entirely with Python's standard library (`tkinter`), so there's nothing extra to install — just run the script and start managing tasks.
@@ -15,79 +16,24 @@ The app demonstrates core GUI development concepts such as event-driven programm
 
 ---
 
-## Features
+## ✨ Features
 
-- Add new tasks using a clean input field
-- Update any selected task
-- Delete tasks from the list
-- Search/filter tasks instantly
-- Scrollable task list for easy navigation
-- Simple and beginner-friendly codebase
+- ➕ **Add Tasks** — Quickly add new tasks to your list
+- ✏️ **Update Tasks** — Edit the text of any existing task
+- 🗑️ **Delete Tasks** — Remove tasks you no longer need
+- 🔍 **Live Search** — Filter tasks in real time as you type, without modifying the underlying data
+- 🎨 **Dark Mode UI** — A consistent dark color palette with color-coded action buttons (green = add, blue = update, red = delete)
+- 📜 **Scrollable List** — Easily browse through longer task lists via an integrated scrollbar
 
-## Technologies / Tools Used
+---
 
-- Python 3.x
-- Tkinter (default Python GUI framework)
-- Basic message dialogs from `tkinter.messagebox`
+## 🖥️ Tech Stack
 
-## How to Install & Run the Project
+| Component | Technology |
+|---|---|
+| Language | Python 3 |
+| GUI Framework | Tkinter (standard library) |
+| Dependencies | None |
 
-### 1. Requirements
-
-Make sure Python 3.x is installed on your system. Tkinter usually comes bundled with Python, so no extra installation is required.
-
-### 2. Running the Program
-
-1. Download or copy the project file (`b.py`).
-2. Open a terminal or command prompt in the folder where the file is located.
-3. Run the following command:
-
-   ```bash
-   python b.py
-   ```
-
-The Task Manager window should appear on your screen immediately.
-
-## How to Test the Application
-
-Here's a quick way to verify everything works as expected:
-
-### 1. Adding a Task
-
-- Type something in the "Enter Task" box
-- Click **Add Task**
-- The task should appear instantly in the list
-
-### 2. Searching for a Task
-
-- Use the search box to filter items
-- The list updates automatically as you type
-- Clear the search bar to see all tasks again
-
-### 3. Updating a Task
-
-- Select a task from the list
-- Enter the new version of the task in the input box
-- Click **Update Task** and check if it changes correctly
-
-### 4. Deleting a Task
-
-- Select any task
-- Hit **Delete Task**
-- Verify that it disappears from the list
-
-### 5. Error Handling
-
-Try some invalid actions like:
-
-- Pressing Update without selecting a task
-- Adding an empty task
-- Deleting without selecting a task
-
-You should see proper warning dialogs.
-
-
-
-
-
+---
 
