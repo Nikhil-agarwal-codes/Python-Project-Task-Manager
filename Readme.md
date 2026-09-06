@@ -37,3 +37,26 @@ The app demonstrates core GUI development concepts such as event-driven programm
 
 ---
 
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Python 3.x installed on your machine
+- Tkinter (included by default with most Python installations)
+
+### Installation
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/your-username/task-manager-gui.git
+   cd task-manager-gui
+   ```
+
+2. Run the application:
+   ```bash
+   python b.py
+   ```
+
+No `pip install` required — the app runs out of the box.
+
+---
