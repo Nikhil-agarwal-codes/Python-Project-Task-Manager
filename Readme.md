@@ -7,12 +7,13 @@ A lightweight desktop Task Manager built with Python and Tkinter, featuring a cl
 ![License](https://img.shields.io/badge/License-MIT-green)
  
 ---
+## 📋 Overview
 
-## Overview
+Task Manager GUI is a simple, no-frills desktop application for tracking day-to-day tasks. It's built entirely with Python's standard library (`tkinter`), so there's nothing extra to install — just run the script and start managing tasks.
 
-This project is a simple desktop-based Task Manager built using Python's Tkinter library. The idea behind the app was to create a small tool that helps manage day-to-day tasks without depending on mobile apps or online platforms. The program allows users to add tasks, update them whenever required, search through the list, and delete tasks they no longer need.
+The app demonstrates core GUI development concepts such as event-driven programming, widget layout management, and syncing a visual list with an underlying data model — making it a great reference project for anyone learning Tkinter.
 
-The goal was to learn the basics of GUI development, event-driven logic, and handling multiple UI components inside a single application window.
+---
 
 ## Features
 
