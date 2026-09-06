@@ -54,7 +54,7 @@ The app demonstrates core GUI development concepts such as event-driven programm
 
 2. Run the application:
    ```bash
-   python b.py
+   python to_do_list.py
    ```
 
 No `pip install` required — the app runs out of the box.
