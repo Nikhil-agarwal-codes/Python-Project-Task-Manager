@@ -69,3 +69,11 @@ No `pip install` required — the app runs out of the box.
 4. **Delete a task** — Select a task from the list and click **Delete Task**.
 
 ---
+
+## ⚙️ How It Works
+
+- Tasks are stored in memory in a Python list for the duration of the session (no file or database persistence).
+- The search bar filters the *displayed* list only — the underlying task data is never altered by a search.
+- Update and delete operations map the currently selected row back to the correct item in the full task list, ensuring accuracy even when a search filter is active.
+
+---
