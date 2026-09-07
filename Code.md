@@ -39,3 +39,22 @@ class TaskManagerGUI:
             bg=background,
             fg=text_color
         ).pack()
+ self.search_entry = tk.Entry(
+            root,
+            width=30,
+            font=("Arial", 12),
+            bg=entry_color,
+            fg=text_color,
+            insertbackground=text_color
+        )
+        self.search_entry.pack(pady=4)
+        self.search_entry.bind("<KeyRelease>", self.filter_tasks)
+
+        # ------ task input field ------
+        tk.Label(
+            root,
+            text="Enter Task:",
+            font=("Arial", 12),
+            bg=background,
+            fg=text_color
+        ).pack()
