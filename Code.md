@@ -22,3 +22,20 @@ class TaskManagerGUI:
 
         self.root.config(bg=background)
 
+ # ------ header ------
+        tk.Label(
+            root,
+            text="Task Manager",
+            font=("Arial", 20, "bold"),
+            bg=background,
+            fg=text_color
+        ).pack(pady=10)
+
+        # ------ search bar ------
+        tk.Label(
+            root,
+            text="Search Task:",
+            font=("Arial", 12),
+            bg=background,
+            fg=text_color
+        ).pack()
