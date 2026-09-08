@@ -4,7 +4,6 @@ A lightweight desktop Task Manager built with Python and Tkinter, featuring a cl
  
 ![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=white)
 ![Tkinter](https://img.shields.io/badge/GUI-Tkinter-informational)
-![License](https://img.shields.io/badge/License-MIT-green)
  
 ---
 
