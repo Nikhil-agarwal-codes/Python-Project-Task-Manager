@@ -58,3 +58,33 @@ class TaskManagerGUI:
             bg=background,
             fg=text_color
         ).pack()
+# ------ buttons row ------
+        btn_container = tk.Frame(root, bg=background)
+        btn_container.pack(pady=10)
+
+        tk.Button(
+            btn_container,
+            text="Add Task",
+            width=12,
+            bg=green_btn,
+            fg="white",
+            command=self.add_task
+        ).grid(row=0, column=0, padx=5)
+
+        tk.Button(
+            btn_container,
+            text="Update Task",
+            width=12,
+            bg=blue_btn,
+            fg="white",
+            command=self.update_task
+        ).grid(row=0, column=1, padx=5)
+
+        tk.Button(
+            btn_container,
+            text="Delete Task",
+            width=12,
+            bg=red_btn,
+            fg="white",
+            command=self.delete_task
+        ).grid(row=0, column=2, padx=5)
