@@ -88,3 +88,22 @@ class TaskManagerGUI:
             fg="white",
             command=self.delete_task
         ).grid(row=0, column=2, padx=5)
+ # ------ listbox with scrollbar ------
+        list_frame = tk.Frame(root, bg=background)
+        list_frame.pack(pady=10)
+
+        self.listbox = tk.Listbox(
+            list_frame,
+            width=50,
+            height=15,
+            font=("Arial", 11),
+            bg=list_color,
+            fg=text_color,
+            selectbackground="#444"
+        )
+        self.listbox.pack(side=tk.LEFT)
+
+        scroll = tk.Scrollbar(list_frame, command=self.listbox.yview)
+        scroll.pack(side=tk.RIGHT, fill=tk.Y)
+
+        self.listbox.config(yscrollcommand=scroll.set)
