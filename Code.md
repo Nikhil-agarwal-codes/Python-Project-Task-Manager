@@ -107,3 +107,8 @@ class TaskManagerGUI:
         scroll.pack(side=tk.RIGHT, fill=tk.Y)
 
         self.listbox.config(yscrollcommand=scroll.set)
+  # --- helper to refresh list display ---
+    def refresh_listbox(self, data):
+        self.listbox.delete(0, tk.END)
+        for entry in data:
+            self.listbox.insert(tk.END, entry)
