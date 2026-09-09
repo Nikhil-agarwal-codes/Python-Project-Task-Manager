@@ -7,7 +7,8 @@ class TaskManagerGUI:
         self.root = root
         self.root.title("Task Manager")
         self.root.geometry("430x560")
-# list to store tasks
+
+        # list to store tasks
         self.all_tasks = []
 
         # ------ color palette ------
@@ -22,7 +23,7 @@ class TaskManagerGUI:
 
         self.root.config(bg=background)
 
- # ------ header ------
+        # ------ header ------
         tk.Label(
             root,
             text="Task Manager",
@@ -39,7 +40,8 @@ class TaskManagerGUI:
             bg=background,
             fg=text_color
         ).pack()
- self.search_entry = tk.Entry(
+
+        self.search_entry = tk.Entry(
             root,
             width=30,
             font=("Arial", 12),
@@ -58,7 +60,18 @@ class TaskManagerGUI:
             bg=background,
             fg=text_color
         ).pack()
-# ------ buttons row ------
+
+        self.task_entry = tk.Entry(
+            root,
+            width=30,
+            font=("Arial", 12),
+            bg=entry_color,
+            fg=text_color,
+            insertbackground=text_color
+        )
+        self.task_entry.pack(pady=5)
+
+        # ------ buttons row ------
         btn_container = tk.Frame(root, bg=background)
         btn_container.pack(pady=10)
 
@@ -88,7 +101,8 @@ class TaskManagerGUI:
             fg="white",
             command=self.delete_task
         ).grid(row=0, column=2, padx=5)
- # ------ listbox with scrollbar ------
+
+        # ------ listbox with scrollbar ------
         list_frame = tk.Frame(root, bg=background)
         list_frame.pack(pady=10)
 
@@ -107,8 +121,77 @@ class TaskManagerGUI:
         scroll.pack(side=tk.RIGHT, fill=tk.Y)
 
         self.listbox.config(yscrollcommand=scroll.set)
-  # --- helper to refresh list display ---
+
+    # --- helper to refresh list display ---
     def refresh_listbox(self, data):
         self.listbox.delete(0, tk.END)
         for entry in data:
             self.listbox.insert(tk.END, entry)
+
+    # --- search logic ---
+    def filter_tasks(self, event=None):
+        word = self.search_entry.get().lower().strip()
+
+        if not word:
+            self.refresh_listbox(self.all_tasks)
+            return
+
+        filtered = [t for t in self.all_tasks if word in t.lower()]
+        self.refresh_listbox(filtered)
+
+    # --- add new task ---
+    def add_task(self):
+        new_task = self.task_entry.get().strip()
+
+        if new_task == "":
+            messagebox.showwarning("Empty Input", "Please enter a task.")
+            return
+
+        self.all_tasks.append(new_task)
+        self.task_entry.delete(0, tk.END)
+        self.refresh_listbox(self.all_tasks)
+
+    # --- update existing task ---
+    def update_task(self):
+        selected = self.listbox.curselection()
+
+        if not selected:
+            messagebox.showerror("No Selection", "Select a task to update.")
+            return
+
+        updated_text = self.task_entry.get().strip()
+
+        if updated_text == "":
+            messagebox.showwarning("Empty Field", "Enter an updated value.")
+            return
+
+        # listbox is filtered sometimes, so we map selection
+        visible_items = self.listbox.get(0, tk.END)
+        old = visible_items[selected[0]]
+
+        original_index = self.all_tasks.index(old)
+        self.all_tasks[original_index] = updated_text
+
+        self.task_entry.delete(0, tk.END)
+        self.refresh_listbox(self.all_tasks)
+
+    # --- delete selected task ---
+    def delete_task(self):
+        selected = self.listbox.curselection()
+
+        if not selected:
+            messagebox.showerror("No Selection", "Select a task to delete.")
+            return
+
+        visible_items = self.listbox.get(0, tk.END)
+        item = visible_items[selected[0]]
+
+        self.all_tasks.remove(item)
+        self.refresh_listbox(self.all_tasks)
+
+
+# ---- start the app ----
+root = tk.Tk()
+app = TaskManagerGUI(root)
+root.mainloop()
+```
